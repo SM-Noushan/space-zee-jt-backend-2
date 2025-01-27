@@ -1,5 +1,6 @@
 import cors from "cors";
 import express from "express";
+import notFound from "./app/middleware/notFound.js";
 
 const app = express();
 
@@ -17,5 +18,8 @@ app.use(
 app.get("/", async (req, res) => {
   res.send("Space Zee: Backend 2");
 });
+
+// api not found
+app.use(notFound);
 
 export default app;
